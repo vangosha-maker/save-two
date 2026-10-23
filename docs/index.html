@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f5f2e9"><meta name="description" content="Спасите двух жителей до подъёма воды. Небольшая пошаговая головоломка — каждый шаг имеет значение.">
+  <title>Спасти двоих — маленькая спасательная операция</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%23244549'/%3E%3Cpath d='M8 24L20 12 32 24M13 21v12h14V21' fill='none' stroke='%23e4a556' stroke-width='4'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="engine.js"></script><script defer src="app.js"></script>
+</head>
+<body>
+<main>
+  <header><div class="eyebrow"><span class="small-wave">≈</span> ТИХАЯ ТАКТИКА <span class="edition">01 / ПАВОДОК</span></div><h1>Спасти двоих<span>.</span></h1><p class="intro">Вода поднимается. Два человека ждут.<br>Найдите путь, который вернёт всех домой.</p></header>
+  <nav id="levels" class="levels" aria-label="Выбор уровня"></nav>
+  <div class="level-intro"><h2 id="level-title"></h2><p id="level-brief"></p><span id="tempo"></span></div>
+  <div class="layout">
+  <section class="operation" aria-label="Игровое поле и состояние операции">
+    <div class="dashboard"><div><span class="label">ХОДЫ</span><strong id="turn">0</strong></div><div><span class="label">СПАСЕНЫ</span><strong><span id="saved">0</span><small> / 2</small></strong></div><div class="passenger"><span class="label">С ВАМИ</span><strong id="carried">Никого</strong></div></div>
+    <div class="forecast"><span class="forecast-icon">≋</span><p id="forecast"></p></div>
+    <div id="bridge-panel" class="bridge-panel" hidden><strong id="bridge-count"></strong><p id="bridge-warning"></p></div><div id="gate-panel" class="gate-panel" hidden><strong id="gate-status"></strong><p id="gate-hint"></p><p id="gate-preview"></p></div><div class="board-heading"><span>КВАРТАЛ 06</span><span>ВОДА ПОСЛЕ ХОДА ↓</span></div>
+    <div class="map-wrap"><div id="board" class="board" role="group" aria-label="Карта 6 на 6. Выбирайте соседнюю клетку."></div><div id="row-times" class="row-times" aria-label="Сроки затопления строк"></div></div>
+    <div id="evac-panel" class="evac-panel" hidden><strong>Две крыши: S и T</strong><p>Обе всегда безопасны. На любой крыше житель доставляется автоматически; каждая может принять обоих.</p><p id="evac-status"></p></div><div id="message" class="message" role="status" aria-live="polite"></div>
+    <button id="next-level" class="next-level" type="button" hidden>Следующий уровень →</button>
+    <button id="switch-gate" class="switch-gate" type="button" hidden>Переключить шлюз · 1 ход</button><div class="actions"><button id="undo" type="button"><span aria-hidden="true">↶</span> Отменить ход</button><button id="restart" type="button"><span aria-hidden="true">↻</span> Заново</button></div>
+  </section>
+  <aside>
+    <div class="brief"><span class="eyebrow">ВАША ЗАДАЧА</span><h2>По одному. <br>До безопасной крыши.</h2><p id="task-copy">Коснитесь соседней клетки, чтобы шагнуть. Подберите двух жителей — фигурки в синем и сиреневом — и отнесите каждого на крышу <b>S</b>.</p><div class="legend"><div><span class="legend-token rescuer-token"><span class="pawn" aria-hidden="true"></span></span> Вы, спасатель</div><div><span class="legend-token resident-token"><span class="civilian blue" aria-hidden="true"></span></span> Житель ждёт помощи</div><div><span class="legend-token roof-token">S</span> <span id="roof-legend">Крыша · всегда безопасна</span></div><div><span class="legend-token wall-token">▥</span> Здание · прохода нет</div><div><span class="legend-token next-token"></span> Следующая зона затопления</div><div><span class="legend-token option-token">·</span> Доступный шаг</div></div></div>
+    <div id="bridge-help" class="bridge-help" hidden><b>Деревянный мост · один проход</b><p>Настил — целый мост. Разлом и × — разрушенный. Когда вы успешно уходите с моста, он рушится и больше не пропускает. Неверный ход и переключение рычага на месте не разрушают мост. Паводок затапливает его по обычным срокам. Отмена восстанавливает мост.</p></div><div id="gate-help" class="gate-help" hidden><b>Рычаг и два канала</b><p>I и II — две группы клеток. Один канал сухой, другой заполнен водой. Рычаг меняет их местами за один ход. Действие доступно только на клетке с рычагом; на клавиатуре — E.</p><p><b>+≈</b> — после переключения будет вода. <b>−≈</b> — станет сухо. Предпросмотр включает следующий ход паводка. Уже затопленную строку шлюз не осушает; безопасные крыши не затапливаются.</p></div><details><summary>Как работает вода</summary><div class="rules"><p id="flood-rules"></p><p>Сначала вы шагаете и автоматически подбираете или доставляете жителя. Затем поднимается вода. Если она накрыла вас или жителя, который ещё ждёт, попытка заканчивается.</p><p>За раз можно нести одного человека. В воду и сквозь здания пройти нельзя. Неверный ход ничего не тратит. Выбор уровня сохраняет попытку; «Заново» сбрасывает только открытый уровень.</p></div></details>
+    <p class="note">Можно думать сколько угодно.<br>Время идёт только с вашими шагами.</p><p class="keyboard">На клавиатуре: стрелки или WASD.<br>Z — отменить. R — начать заново.</p>
+  </aside>
+  </div><footer>Маленькая операция. Две большие причины вернуться.</footer>
+</main>
+</body></html>
