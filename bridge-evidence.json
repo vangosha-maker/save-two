@@ -1,0 +1,460 @@
+{
+  "eight": {
+    "level": {
+      "id": "timber-lane",
+      "title": "Дощатый переход",
+      "map": [
+        "S..B..",
+        ".###..",
+        ".A....",
+        "......",
+        "......",
+        "~~~~~~"
+      ],
+      "flood": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "bridges": [
+        6
+      ],
+      "brief": "Мост выдержит один проход. После ухода с него назад уже не вернуться."
+    },
+    "win": {
+      "solved": true,
+      "length": 18,
+      "path": [
+        "down",
+        "down",
+        "right",
+        "right",
+        "right",
+        "right",
+        "up",
+        "up",
+        "left",
+        "left",
+        "left",
+        "left",
+        "right",
+        "right",
+        "right",
+        "left",
+        "left",
+        "left"
+      ],
+      "visited": 123,
+      "final": {
+        "p": 0,
+        "t": 18,
+        "f": 0,
+        "m": 1,
+        "sw": 0,
+        "a": 2,
+        "b": 2,
+        "first": "A"
+      },
+      "prefixState": {
+        "p": 0,
+        "t": 0,
+        "f": 0,
+        "m": 0,
+        "sw": 0,
+        "a": 0,
+        "b": 0,
+        "first": ""
+      }
+    },
+    "noBridge": {
+      "solved": false,
+      "visited": 39,
+      "prefixState": {
+        "p": 0,
+        "t": 0,
+        "f": 0,
+        "m": 0,
+        "sw": 0,
+        "a": 0,
+        "b": 0,
+        "first": ""
+      }
+    }
+  },
+  "nine": {
+    "level": {
+      "map": [
+        "..S...",
+        "#...#.",
+        ".A.#..",
+        "....B.",
+        ".#...#",
+        "~~~~~~"
+      ],
+      "flood": [
+        6,
+        12,
+        18,
+        24
+      ],
+      "bridges": [
+        1,
+        8
+      ],
+      "id": "return-bank",
+      "title": "Дальний берег",
+      "brief": "Две поездки по кварталу. Каждый мост исчезнет после вашего ухода."
+    },
+    "win": {
+      "solved": true,
+      "length": 20,
+      "path": [
+        "right",
+        "right",
+        "right",
+        "down",
+        "down",
+        "down",
+        "left",
+        "up",
+        "right",
+        "up",
+        "up",
+        "left",
+        "left",
+        "left",
+        "down",
+        "down",
+        "left",
+        "up",
+        "up",
+        "right"
+      ],
+      "visited": 671,
+      "final": {
+        "p": 2,
+        "t": 20,
+        "f": 0,
+        "m": 3,
+        "sw": 0,
+        "a": 2,
+        "b": 2,
+        "first": "B"
+      },
+      "prefixState": {
+        "p": 2,
+        "t": 0,
+        "f": 0,
+        "m": 0,
+        "sw": 0,
+        "a": 0,
+        "b": 0,
+        "first": ""
+      }
+    },
+    "bad": {
+      "solved": false,
+      "visited": 286,
+      "prefixState": {
+        "p": 1,
+        "t": 1,
+        "f": 0,
+        "m": 0,
+        "sw": 0,
+        "a": 0,
+        "b": 0,
+        "first": ""
+      }
+    },
+    "repair": {
+      "solved": true,
+      "length": 18,
+      "path": [
+        "left",
+        "down",
+        "down",
+        "up",
+        "up",
+        "right",
+        "down",
+        "down",
+        "down",
+        "right",
+        "right",
+        "up",
+        "right",
+        "up",
+        "up",
+        "left",
+        "left",
+        "left"
+      ],
+      "visited": 289,
+      "final": {
+        "p": 2,
+        "t": 18,
+        "f": 0,
+        "m": 0,
+        "sw": 0,
+        "a": 2,
+        "b": 2,
+        "first": "A"
+      },
+      "prefixState": {
+        "p": 1,
+        "t": 1,
+        "f": 0,
+        "m": 0,
+        "sw": 0,
+        "a": 0,
+        "b": 0,
+        "first": ""
+      }
+    },
+    "no": {
+      "solved": false,
+      "visited": 99,
+      "prefixState": {
+        "p": 2,
+        "t": 0,
+        "f": 0,
+        "m": 0,
+        "sw": 0,
+        "a": 0,
+        "b": 0,
+        "first": ""
+      }
+    },
+    "badPrefix": [
+      "left"
+    ]
+  },
+  "ten": {
+    "level": {
+      "map": [
+        ".S...#",
+        "...#.#",
+        "..#B..",
+        ".T....",
+        "..A.#.",
+        "~~~~~~"
+      ],
+      "flood": [
+        6,
+        12,
+        18,
+        24
+      ],
+      "bridges": [
+        7,
+        2
+      ],
+      "gate": {
+        "lever": [
+          2,
+          5
+        ],
+        "channels": [
+          [
+            13
+          ],
+          [
+            10
+          ]
+        ],
+        "initial": 0
+      },
+      "id": "last-harbor",
+      "title": "Последняя переправа",
+      "brief": "Финальная операция. Два жителя, две безопасные крыши, мосты и шлюз."
+    },
+    "win": {
+      "solved": true,
+      "length": 19,
+      "path": [
+        "down",
+        "down",
+        "down",
+        "down",
+        "right",
+        "up",
+        "left",
+        "right",
+        "right",
+        "up",
+        "right",
+        "right",
+        "switch",
+        "left",
+        "up",
+        "up",
+        "left",
+        "left",
+        "left"
+      ],
+      "visited": 225,
+      "final": {
+        "p": 1,
+        "t": 19,
+        "f": 1,
+        "m": 3,
+        "sw": 1,
+        "a": 3,
+        "b": 2,
+        "first": "A"
+      },
+      "prefixState": {
+        "p": 1,
+        "t": 0,
+        "f": 0,
+        "m": 0,
+        "sw": 0,
+        "a": 0,
+        "b": 0,
+        "first": ""
+      }
+    },
+    "noSwitch": {
+      "solved": false,
+      "visited": 158,
+      "prefixState": {
+        "p": 1,
+        "t": 0,
+        "f": 0,
+        "m": 0,
+        "sw": 0,
+        "a": 0,
+        "b": 0,
+        "first": ""
+      }
+    },
+    "onlyS": {
+      "solved": false,
+      "visited": 118,
+      "prefixState": {
+        "p": 1,
+        "t": 0,
+        "f": 0,
+        "m": 0,
+        "sw": 0,
+        "a": 0,
+        "b": 0,
+        "first": ""
+      }
+    },
+    "onlyT": {
+      "solved": false,
+      "visited": 242,
+      "prefixState": {
+        "p": 1,
+        "t": 0,
+        "f": 0,
+        "m": 0,
+        "sw": 0,
+        "a": 0,
+        "b": 0,
+        "first": ""
+      }
+    },
+    "noBridges": {
+      "solved": false,
+      "visited": 14,
+      "prefixState": {
+        "p": 1,
+        "t": 0,
+        "f": 0,
+        "m": 0,
+        "sw": 0,
+        "a": 0,
+        "b": 0,
+        "first": ""
+      }
+    },
+    "trap": {
+      "prefix": [
+        "down",
+        "down",
+        "down",
+        "down",
+        "right",
+        "up",
+        "left",
+        "right",
+        "right",
+        "up",
+        "right",
+        "right",
+        "switch",
+        "left",
+        "up",
+        "up",
+        "left",
+        "left",
+        "down"
+      ],
+      "bad": {
+        "solved": false,
+        "visited": 1,
+        "prefixState": {
+          "p": 8,
+          "t": 19,
+          "f": 1,
+          "m": 3,
+          "sw": 1,
+          "a": 3,
+          "b": 1,
+          "first": "A"
+        }
+      },
+      "unbroken": {
+        "solved": true,
+        "length": 21,
+        "path": [
+          "down",
+          "down",
+          "down",
+          "down",
+          "right",
+          "up",
+          "left",
+          "right",
+          "right",
+          "up",
+          "right",
+          "right",
+          "switch",
+          "left",
+          "up",
+          "up",
+          "left",
+          "left",
+          "down",
+          "up",
+          "left"
+        ],
+        "visited": 9,
+        "final": {
+          "p": 1,
+          "t": 21,
+          "f": 1,
+          "m": 0,
+          "sw": 1,
+          "a": 3,
+          "b": 2,
+          "first": "A"
+        },
+        "prefixState": {
+          "p": 8,
+          "t": 19,
+          "f": 1,
+          "m": 0,
+          "sw": 1,
+          "a": 3,
+          "b": 1,
+          "first": "A"
+        }
+      }
+    }
+  }
+}

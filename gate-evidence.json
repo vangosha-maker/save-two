@@ -1,0 +1,288 @@
+[
+  {
+    "level": {
+      "id": "sluice-yard",
+      "title": "У шлюза",
+      "map": [
+        "......",
+        ".####.",
+        "A.S.B.",
+        ".####.",
+        "......",
+        "~~~~~~"
+      ],
+      "flood": [
+        4,
+        8,
+        12,
+        16
+      ],
+      "brief": "Два канала и один рычаг. Сухой канал можно пройти; заполненный — нельзя.",
+      "gate": {
+        "lever": [
+          2,
+          2
+        ],
+        "channels": [
+          [
+            13
+          ],
+          [
+            15
+          ]
+        ],
+        "initial": 0
+      }
+    },
+    "win": {
+      "solved": true,
+      "path": [
+        "left",
+        "left",
+        "right",
+        "right",
+        "switch",
+        "right",
+        "right",
+        "left",
+        "left"
+      ],
+      "length": 9,
+      "switches": 1,
+      "visited": 152,
+      "prefixState": {
+        "p": 14,
+        "t": 0,
+        "phase": 0,
+        "sw": 0,
+        "a": 0,
+        "b": 0,
+        "first": ""
+      }
+    },
+    "withoutSwitch": {
+      "solved": false,
+      "visited": 71,
+      "prefixState": {
+        "p": 14,
+        "t": 0,
+        "phase": 0,
+        "sw": 0,
+        "a": 0,
+        "b": 0,
+        "first": ""
+      }
+    },
+    "oneSwitch": {
+      "solved": true,
+      "path": [
+        "left",
+        "left",
+        "right",
+        "right",
+        "switch",
+        "right",
+        "right",
+        "left",
+        "left"
+      ],
+      "length": 9,
+      "switches": 1,
+      "visited": 112,
+      "prefixState": {
+        "p": 14,
+        "t": 0,
+        "phase": 0,
+        "sw": 0,
+        "a": 0,
+        "b": 0,
+        "first": ""
+      }
+    },
+    "Bfirst": {
+      "solved": true,
+      "path": [
+        "switch",
+        "right",
+        "right",
+        "left",
+        "left",
+        "switch",
+        "left",
+        "left",
+        "right",
+        "right"
+      ],
+      "length": 10,
+      "switches": 2,
+      "visited": 94,
+      "prefixState": {
+        "p": 14,
+        "t": 0,
+        "phase": 0,
+        "sw": 0,
+        "a": 0,
+        "b": 0,
+        "first": ""
+      }
+    },
+    "firstSwitchAfterDelivery": {
+      "solved": true,
+      "path": [
+        "left",
+        "left",
+        "right",
+        "right",
+        "switch",
+        "right",
+        "right",
+        "left",
+        "left"
+      ],
+      "length": 9,
+      "switches": 1,
+      "visited": 81,
+      "prefixState": {
+        "p": 14,
+        "t": 0,
+        "phase": 0,
+        "sw": 0,
+        "a": 0,
+        "b": 0,
+        "first": ""
+      }
+    }
+  },
+  {
+    "level": {
+      "id": "canal-crossing",
+      "title": "Канальный квартал",
+      "map": [
+        ".##.S.",
+        "......",
+        "#B....",
+        "A....#",
+        "..#..#",
+        "~~~~~~"
+      ],
+      "flood": [
+        8,
+        16,
+        24,
+        32
+      ],
+      "brief": "Две просьбы о помощи и шлюз посреди квартала. Спланируйте оба рейса.",
+      "gate": {
+        "lever": [
+          3,
+          3
+        ],
+        "channels": [
+          [
+            8,
+            14
+          ],
+          [
+            20
+          ]
+        ],
+        "initial": 0
+      }
+    },
+    "win": {
+      "solved": true,
+      "path": [
+        "down",
+        "down",
+        "down",
+        "left",
+        "switch",
+        "left",
+        "left",
+        "left",
+        "right",
+        "right",
+        "right",
+        "switch",
+        "up",
+        "up",
+        "up",
+        "right",
+        "down",
+        "down",
+        "left",
+        "left",
+        "left",
+        "up",
+        "right",
+        "right",
+        "up",
+        "right"
+      ],
+      "length": 26,
+      "switches": 2,
+      "visited": 706,
+      "prefixState": {
+        "p": 4,
+        "t": 0,
+        "phase": 0,
+        "sw": 0,
+        "a": 0,
+        "b": 0,
+        "first": ""
+      }
+    },
+    "withoutSwitch": {
+      "solved": false,
+      "visited": 225,
+      "prefixState": {
+        "p": 4,
+        "t": 0,
+        "phase": 0,
+        "sw": 0,
+        "a": 0,
+        "b": 0,
+        "first": ""
+      }
+    },
+    "oneSwitch": {
+      "solved": false,
+      "visited": 463,
+      "prefixState": {
+        "p": 4,
+        "t": 0,
+        "phase": 0,
+        "sw": 0,
+        "a": 0,
+        "b": 0,
+        "first": ""
+      }
+    },
+    "Bfirst": {
+      "solved": false,
+      "visited": 454,
+      "prefixState": {
+        "p": 4,
+        "t": 0,
+        "phase": 0,
+        "sw": 0,
+        "a": 0,
+        "b": 0,
+        "first": ""
+      }
+    },
+    "firstSwitchAfterDelivery": {
+      "solved": false,
+      "visited": 226,
+      "prefixState": {
+        "p": 4,
+        "t": 0,
+        "phase": 0,
+        "sw": 0,
+        "a": 0,
+        "b": 0,
+        "first": ""
+      }
+    }
+  }
+]
