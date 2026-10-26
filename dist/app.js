@@ -39,7 +39,9 @@ $('flood-rules').textContent='После ходов '+l.flood.join(', ')+' за�
 $('turn').textContent=s.turn;$('saved').textContent=rescued(s);
 $('carried').innerHTML=s.carried?person(s.carried)+'<span>Житель</span>':'Никого';
 $('carried').ariaLabel=s.carried?personName(s.carried)+' с вами':'Никого';
-$('forecast').innerHTML=nextTurn?'После хода <b>'+nextTurn+'</b> затопит строку <b>'+(nextRow+1)+'</b> · осталось шагов: <b>'+(nextTurn-s.turn)+'</b>':'Вода достигла предела. Строка 1 и '+roofNames+' безопасны.';
+const turnsLeft=nextTurn-s.turn;
+$('forecast').parentElement.classList.toggle('is-imminent',turnsLeft===1);
+$('forecast').innerHTML=nextTurn?'<strong class="forecast-count">'+(turnsLeft===1?'Вода поднимется на следующем ходу':'До подъёма воды: '+turnsLeft+' '+turnWord(turnsLeft))+'</strong><span class="forecast-detail">После хода <b>'+nextTurn+'</b> затопит строку <b>'+(nextRow+1)+'</b> (сверху).</span>':'<strong class="forecast-count">Вода достигла предела</strong><span class="forecast-detail">Строка 1 и '+roofNames+' безопасны.</span>';
 $('board').replaceChildren();$('row-times').replaceChildren();
 l.map.forEach((line,row)=>{
 const due=row===0?null:row===5?0:l.flood[4-row],label=document.createElement('div');

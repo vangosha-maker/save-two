@@ -16,7 +16,7 @@
   <div class="layout">
   <section class="operation" aria-label="Игровое поле и состояние операции">
     <div class="dashboard"><div><span class="label">ХОДЫ</span><strong id="turn">0</strong></div><div><span class="label">СПАСЕНЫ</span><strong><span id="saved">0</span><small> / 2</small></strong></div><div class="passenger"><span class="label">С ВАМИ</span><strong id="carried">Никого</strong></div></div>
-    <div class="forecast"><span class="forecast-icon">≋</span><p id="forecast"></p></div>
+    <div class="forecast"><span class="forecast-icon" aria-hidden="true">≋</span><p id="forecast" aria-live="polite" aria-atomic="true"></p></div>
     <div id="bridge-panel" class="bridge-panel" hidden><strong id="bridge-count"></strong><p id="bridge-warning"></p></div><div id="gate-panel" class="gate-panel" hidden><strong id="gate-status"></strong><p id="gate-hint"></p><p id="gate-preview"></p></div><div class="board-heading"><span>КВАРТАЛ 06</span><span>ВОДА ПОСЛЕ ХОДА ↓</span></div>
     <div class="map-wrap"><div id="board" class="board" role="group" aria-label="Карта 6 на 6. Выбирайте соседнюю клетку."></div><div id="row-times" class="row-times" aria-label="Сроки затопления строк"></div></div>
     <div id="evac-panel" class="evac-panel" hidden><strong>Две крыши: S и T</strong><p>Обе всегда безопасны. На любой крыше житель доставляется автоматически; каждая может принять обоих.</p><p id="evac-status"></p></div><div id="message" class="message" role="status" aria-live="polite"></div>
